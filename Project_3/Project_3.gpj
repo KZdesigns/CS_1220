@@ -1,5 +1,5 @@
 !1514;s
-A
+J
 SAU0JGRASP_MAIN_BOUNDS=%<CONTROL_SHELL_BOUNDS>\012PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012GCC_COLORS=\012-Run\012ADD_EXE_PATH==Y\012
 SCU0JGRASP_MAIN_BOUNDS=%<CONTROL_SHELL_BOUNDS>\012PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012GCC_COLORS=\012-Run\012ADD_EXE_PATH==Y\012
 S+U0JGRASP_MAIN_BOUNDS=%<CONTROL_SHELL_BOUNDS>\012PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012GCC_COLORS=\012-Run\012ADD_EXE_PATH==Y\012
@@ -12,9 +12,15 @@ s#i0
 s#k0
 s#j0
 s#l0
-!17;g
-%\011Scores.java
-!17;f
-%\011Scores.java
-!51;t
-jgrCheckstyle0xr	%\011Scores.java	1635400358119:P	
+!54;g
+%\011Spherocylinder.java
+%\011SpherocylinderList.java
+!54;f
+%\011Spherocylinder.java
+%\011SpherocylinderList.java
+!62;l
+%\011SpherocylinderListTest.java
+%\011SpherocylinderTest.java
+!503;t
+jgrJUnit0xr	%\011Spherocylinder.java	1635623824192:F%\011SpherocylinderTest.java	%\011SpherocylinderListTest.java	1635623824192:P%\011SpherocylinderList.java	%\011SpherocylinderList.java	1635623824192:P%\011SpherocylinderListTest.java	%\011SpherocylinderTest.java	1635623824192:F%\011Spherocylinder.java	
+jgrCheckstyle0xr	%\011Spherocylinder.java	1635623711678:P	%\011SpherocylinderListTest.java	1635623799439:P	%\011SpherocylinderList.java	1635623711678:P	%\011SpherocylinderTest.java	1635623711678:P	

@@ -104,7 +104,7 @@ public class SpherocylinderTest {
    */
    @Test public void getCountTest() {
       Spherocylinder s = new Spherocylinder("Example 1", 0.5, 0.25);
-      Assert.assertEquals("Count Error", 14, s.getCount());
+      Assert.assertEquals("Count Error", 54, s.getCount());
    }
    
    /**

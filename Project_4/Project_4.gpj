@@ -1,5 +1,5 @@
 !1514;s
-A
+J
 SAU0JGRASP_MAIN_BOUNDS=%<CONTROL_SHELL_BOUNDS>\012PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012GCC_COLORS=\012-Run\012ADD_EXE_PATH==Y\012
 SCU0JGRASP_MAIN_BOUNDS=%<CONTROL_SHELL_BOUNDS>\012PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012GCC_COLORS=\012-Run\012ADD_EXE_PATH==Y\012
 S+U0JGRASP_MAIN_BOUNDS=%<CONTROL_SHELL_BOUNDS>\012PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012GCC_COLORS=\012-Run\012ADD_EXE_PATH==Y\012
@@ -12,19 +12,24 @@ s#i0
 s#k0
 s#j0
 s#l0
-!143;g
-%\011InventoryItem.java
-%\011OnlineArticle.java
-%\011OnlineTextItem.java
-%\011InventoryApp.java
-%\011OnlineBook.java
-%\011ElectronicsItem.java
-!143;f
-%\011InventoryItem.java
-%\011OnlineArticle.java
-%\011OnlineTextItem.java
-%\011InventoryApp.java
-%\011OnlineBook.java
-%\011ElectronicsItem.java
-!257;t
-jgrCheckstyle0xr	%\011InventoryItem.java	1635992827962:P	%\011OnlineArticle.java	1635992827962:P	%\011OnlineTextItem.java	1635992827962:P	%\011InventoryApp.java	1635992827962:P	%\011OnlineBook.java	1635992827962:P	%\011ElectronicsItem.java	1635992827962:P	
+!76;u
+a0	b20	c255	f%\011Project_4.jar	g%\011Project_4.zip	hManifest-Version\0111.0!116;g
+%\011PersonalCloud.java
+%\011DedicatedCloud.java
+%\011CloudStorage.java
+%\011PublicCloud.java
+%\011SharedCloud.java
+!116;f
+%\011PersonalCloud.java
+%\011DedicatedCloud.java
+%\011CloudStorage.java
+%\011PublicCloud.java
+%\011SharedCloud.java
+!109;l
+%\011PublicCloudTest.java
+%\011SharedCloudTest.java
+%\011DedicatedCloudTest.java
+%\011PersonalCloudTest.java
+!924;t
+jgrJUnit0xr	%\011PersonalCloud.java	1636245483955:P%\011PersonalCloudTest.java	%\011DedicatedCloud.java	1636245483955:P%\011DedicatedCloudTest.java	%\011PublicCloudTest.java	1636245483955:P%\011PublicCloud.java	%\011SharedCloudTest.java	1636245483955:P%\011SharedCloud.java	%\011PublicCloud.java	1636245483955:P%\011PublicCloudTest.java	%\011SharedCloud.java	1636245483955:P%\011SharedCloudTest.java	%\011DedicatedCloudTest.java	1636245483955:P%\011DedicatedCloud.java	%\011PersonalCloudTest.java	1636245483955:P%\011PersonalCloud.java	
+jgrCheckstyle0xr	%\011PersonalCloud.java	1636245481458:P	%\011DedicatedCloud.java	1636245481458:P	%\011PublicCloudTest.java	1636245481458:P	%\011SharedCloudTest.java	1636245481458:P	%\011CloudStorage.java	1636245481458:P	%\011PublicCloud.java	1636245481458:P	%\011SharedCloud.java	1636245481458:P	%\011DedicatedCloudTest.java	1636245481458:P	%\011PersonalCloudTest.java	1636245481458:P	

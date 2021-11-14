@@ -58,6 +58,4 @@ public class DedicatedCloud extends CloudStorage {
          + "\nServer Cost: " + df.format(serverCost);
       return output;
    }
-
-
 }

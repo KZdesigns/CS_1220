@@ -6,7 +6,7 @@ Project_4
 @version 11/6/2021
 */
 
-public abstract class CloudStorage {
+public abstract class CloudStorage implements Comparable<CloudStorage> {
 
    protected String name;
    protected double baseStorageCost;
@@ -91,6 +91,16 @@ public abstract class CloudStorage {
    monthlyCost abstract method representing the monthly cost.
    @return double representing the monthly cost.
    */
-   public abstract double monthlyCost();    
+   public abstract double monthlyCost();
+   
+   /**
+   CompareTo method implenting the camparable interface.
+   @param obj an instance of CloudStorage to be compared.
+   @return and int -1, 0, 1 depending on the comparison.
+   */
+   public int compareTo(CloudStorage obj) {
+      return this.getName().toUpperCase()
+         .compareTo(obj.getName().toUpperCase());
+   }  
 
 }

@@ -16,7 +16,12 @@ public class Division {
    */
    public static int intDivide(int numerator, int denominator) {
       int answer = 0;
-      answer = numerator / denominator;  
+      try {
+         answer = numerator / denominator;
+      }
+      catch (ArithmeticException e) {
+         return answer;
+      }  
       return answer;
    }
    
@@ -24,10 +29,17 @@ public class Division {
    decimalDivide takes in two ints and performs floating point division.
    @param numerator - int reps the numerator of the problem.
    @param denominator - reps the denominator of the problem.
-   @return double answer. 
+   @return double answer.
+   @throws IllegalArgumentException when denom is 0. 
    */
    public static double decimalDivide(int numerator, int denominator) {
+      if (denominator == 0) {
+         throw new IllegalArgumentException("The denominator cannot be zero.");
+      }
+      
       double answer = 0;
+      
+      
       answer = (double) numerator / denominator;
       return answer;
    }

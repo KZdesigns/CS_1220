@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.File;
+import java.util.NoSuchElementException;
 
 /**
 CloudStorageList - Inheritance working with parent and children classes.
@@ -63,65 +64,81 @@ public class CloudStorageList {
    */
    public void readFile(String fileName) throws FileNotFoundException {
       Scanner scanFile = new Scanner(new File(fileName));
+      String errorMessage = "";
       
       
       while (scanFile.hasNext()) {
          String line = scanFile.nextLine();
          Scanner scanLine = new Scanner(line);
          scanLine.useDelimiter(",");
-         
          char type = scanLine.next().toUpperCase().charAt(0);
+         try {
+            
          
-         switch (type) {
-         
-            case 'D':
-               String name = scanLine.next();
-               String storage = scanLine.next();
-               String server = scanLine.next();
-               double storageCost = Double.parseDouble(storage);
-               double serverCost = Double.parseDouble(server); 
-               DedicatedCloud dcStorage = 
-                  new DedicatedCloud(name, storageCost, serverCost);
-               this.addCloudStorage(dcStorage);
-               break; 
-            case 'S':
-               name = scanLine.next();
-               storage = scanLine.next();
-               String stored = scanLine.next();
-               String limit = scanLine.next();
-               storageCost = Double.parseDouble(storage);
-               double dataStored = Double.parseDouble(stored);
-               double dataLimit = Double.parseDouble(limit);
-               SharedCloud scStorage = 
-                  new SharedCloud(name, storageCost, dataStored, dataLimit);
-               this.addCloudStorage(scStorage);
-               break;
-            case 'C':
-               name = scanLine.next();
-               storage = scanLine.next();
-               stored = scanLine.next();
-               limit = scanLine.next();
-               storageCost = Double.parseDouble(storage);
-               dataStored = Double.parseDouble(stored);
-               dataLimit = Double.parseDouble(limit);
-               PublicCloud pcStorage = 
-                  new PublicCloud(name, storageCost, dataStored, dataLimit);
-               this.addCloudStorage(pcStorage);
-               break;
-            case 'P':
-               name = scanLine.next();
-               storage = scanLine.next();
-               stored = scanLine.next();
-               limit = scanLine.next();
-               storageCost = Double.parseDouble(storage);
-               dataStored = Double.parseDouble(stored);
-               dataLimit = Double.parseDouble(limit);
-               PersonalCloud pStorage = 
-                  new PersonalCloud(name, storageCost, dataStored, dataLimit);
-               this.addCloudStorage(pStorage);
-               break;
-            default:
-               break;    
+            switch (type) {
+            
+               case 'D':
+                  String name = scanLine.next();
+                  String storage = scanLine.next();
+                  String server = scanLine.next();
+                  double storageCost = Double.parseDouble(storage);
+                  double serverCost = Double.parseDouble(server); 
+                  DedicatedCloud dcStorage = 
+                     new DedicatedCloud(name, storageCost, serverCost);
+                  this.addCloudStorage(dcStorage);
+                  break;
+               case 'S':
+                  name = scanLine.next();
+                  storage = scanLine.next();
+                  String stored = scanLine.next();
+                  String limit = scanLine.next();
+                  storageCost = Double.parseDouble(storage);
+                  double dataStored = Double.parseDouble(stored);
+                  double dataLimit = Double.parseDouble(limit);
+                  SharedCloud scStorage = 
+                     new SharedCloud(name, storageCost, dataStored, dataLimit);
+                  this.addCloudStorage(scStorage);
+                  break;
+               case 'C':
+                  name = scanLine.next();
+                  storage = scanLine.next();
+                  stored = scanLine.next();
+                  limit = scanLine.next();
+                  storageCost = Double.parseDouble(storage);
+                  dataStored = Double.parseDouble(stored);
+                  dataLimit = Double.parseDouble(limit);
+                  PublicCloud pcStorage = 
+                     new PublicCloud(name, storageCost, dataStored, dataLimit);
+                  this.addCloudStorage(pcStorage);
+                  break;
+               case 'P':
+                  name = scanLine.next();
+                  storage = scanLine.next();
+                  stored = scanLine.next();
+                  limit = scanLine.next();
+                  storageCost = Double.parseDouble(storage);
+                  dataStored = Double.parseDouble(stored);
+                  dataLimit = Double.parseDouble(limit);
+                  PersonalCloud pStorage = new 
+                     PersonalCloud(name, storageCost, dataStored, dataLimit);
+                  this.addCloudStorage(pStorage);
+                  break;
+               default:
+                  String categoryIn = Character.toString(type);
+                  Exception err = new
+                     InvalidCategoryException(categoryIn);
+                  errorMessage = line + "\n" + err;
+                  this.addInvalidRecord(errorMessage);
+                  break;    
+            }
+         }
+         catch (NumberFormatException err) {
+            errorMessage = line + "\n" + err;
+            this.addInvalidRecord(errorMessage);
+         }
+         catch (NoSuchElementException err) {
+            errorMessage = line + "\n" + err + ": For missing input data";
+            this.addInvalidRecord(errorMessage);
          }
       }
       
@@ -174,6 +191,23 @@ public class CloudStorageList {
       
       for (CloudStorage storageItem : storageList) {
          output += storageItem + "\n\n";
+      }
+      
+      return output;
+   
+   }
+   
+   /**
+   generateInvalidRecordsReport returns the report of invalid records.
+   @return output report ordered by monthly cost.
+   */
+   public String generateInvalidRecordsReport() {
+      String output = "----------------------";
+      output += "\nInvalid Records Report";
+      output += "\n----------------------\n";
+      
+      for (String recordItem : invalidList) {
+         output += recordItem + "\n\n";
       }
       
       return output;
